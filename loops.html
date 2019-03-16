@@ -6,6 +6,15 @@
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
         <script src="js/menu.js"></script>
         <title>Loops</title>
+        <script>
+            var myArray = [];
+            function array(){	
+                var text = document.getElementById("txtValue").value;
+                myArray.push(text);
+                document.getElementById("arrayInformation").innerHTML = myArray;
+                document.getElementById("txtValue").value = "";
+            }
+        </script>
     </head>
                 
     <body>   
@@ -14,7 +23,7 @@
             <nav id="page-nav">  
                 <div class="menu">
                     <ul>
-                        <li><a href="loops.html" title="Loops"><span class="first">Loops!</span>Loops</a></li>
+                        <li><a href="loops.html" title="Loops"><span class="first">Loops!</span>Loops and Arrays</a></li>
                         <li class="submenu"><a href="" title="HTML5 & CSS"><span class="third">HTML5 & CSS!</span>HTML5 & CSS</a>
                             <ul class="children">
                                 <li><a href="images.html" title="Images">Images and Sounds</a></li>
@@ -41,11 +50,16 @@
                 You can have a loop from numbers or do something with a<br>
                 fixed number:
             </p><br><br>
-            <input id="value" type="text"><br><br><br>
+            <input id="value" type="text"><br><br>
             <p class="transBox" id="demo">Type above the number to create a loop!</p><br>
             <button class="button" type="button" onclick="createLoop()">create a Loop</button><br><br>
             <p class="transBox" id="demo">Type above a text to create a fixed 10 times loop!</p><br>
             <button class="button" type="button" onclick="loop10Times()">Fixed loop</button><br>
+
+
+            <p class="transbox" id="arrayInformation"></p>
+            <input id="txtValue" type="text"><br>
+            <button class="button" type="button" onclick="array()">Add to the Array!</button>
         </div>
     </body>
             

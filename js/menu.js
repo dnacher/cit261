@@ -1,7 +1,7 @@
 $(document).ready(main);
 
 var contador = 1;
-var ctx;
+
 
 function main () {
 	$('.menu_bar').click(function(){
@@ -27,6 +27,7 @@ function main () {
 }
 
 function canvas(){
+	var ctx;
 	var c = document.getElementById("myCanvas");
 			ctx = c.getContext("2d");
             ctx.beginPath();
@@ -62,4 +63,30 @@ function loop10Times(){
 		text+= value + ": #" + (i+1) +  "<br>";
 	}
 	document.getElementById("demo").innerHTML = text;
+}
+
+function createJson(){
+	var jsonString = '{ "name":"Daniel","surname":"Nacher", "age":34, "country":"Uruguay", "hobbies": "to play the guitar"}';
+	var info = JSON.parse(jsonString);
+	var text = "My name is " + info.name + " " + info.surname + ". I'm " + info.age + " years old, I'm from " + info.country + " and I like " + info.hobbies + "<br>";		
+	var text2 = JSON.stringify(jsonString);
+	document.getElementById("text").innerHTML = text;		
+	document.getElementById("text2").innerHTML = text2;		
+}
+
+function createObjectInformation(){
+	var person = new Object();
+	var name = document.getElementById("name").value;
+	var lastname = document.getElementById("lastname").value;
+	var age = document.getElementById("age").value;
+	var hobbie = document.getElementById("hobbie").value;
+	person.name= name;
+	person.lastname = lastname;
+	person.age = age;
+	person.hobbie = hobbie;
+	document.getElementById("objectInformation").innerHTML = person.name + " " + person.lastname + " is " + person.age + " years old and likes " + person.hobbie;
+}
+
+function ontouchFunction(){
+	document.getElementById("demo").innerHTML = "Hello CIT-261";
 }
