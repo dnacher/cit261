@@ -86,3 +86,50 @@ function createObjectInformation(){
 	person.hobbie = hobbie;
 	document.getElementById("objectInformation").innerHTML = person.name + " " + person.lastname + " is " + person.age + " years old and likes " + person.hobbie;
 }
+
+
+function modify(){
+	var element = document.getElementById("shape");
+	var pos = 0;
+	var speed = setInterval(rotate, 5);
+	function rotate() {
+		  if (pos == 360) {
+			clearInterval(speed);
+		  } else {
+			pos++; 
+			element.style.transform = "rotate(" + pos + "deg)";
+		  }
+	}
+}
+
+function modify2(){
+	var element = document.getElementById("shape2");
+					var pos = 0;
+					var speed = setInterval(move, 5);
+					var moving = true;
+					function move() {
+						if(moving){
+							pos++; 
+							element.style.left = pos + 'px';
+							if(pos==360){
+								moving=false;
+							}
+						}else{
+							pos--; 
+							element.style.left = pos + 'px';
+							if(pos==0){
+								moving=true;
+							}
+						}					
+					}
+}
+
+function handleClick(){
+	var element = document.getElementById("shape");
+	element.style.background = "transparent";
+	element.style.height = "0px";
+	element.style.width = "0px";
+	element.style.borderLeft = "50px solid transparent";
+	element.style.borderRight = "50px solid transparent";
+	element.style.borderBottom = "100px solid #f25724";
+}
