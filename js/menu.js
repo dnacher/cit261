@@ -88,5 +88,5 @@ function createObjectInformation(){
 }
 
 function ontouchFunction(){
-	document.getElementById("demo").innerHTML = "Hello CIT-261";
+	document.getElementById("triggerParagraph").innerHTML = "Hello CIT-261";
 }
