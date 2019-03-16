@@ -133,3 +133,39 @@ function handleClick(){
 	element.style.borderRight = "50px solid transparent";
 	element.style.borderBottom = "100px solid #f25724";
 }
+
+function storageAvailable(type) {                     
+	var storage = window[type],
+		x = '__storage_test__';
+	storage.setItem(x, x);
+	storage.removeItem(x);
+	return true;
+}
+
+
+function saveAnswers(){
+	var book = document.getElementById('txtBook').value;
+	var color = document.getElementById('txtColor').value;
+	var hobbie = document.getElementById('txtHobbie').value;
+	var person = {book: book, color: color, hobbie: hobbie};
+	var personJson = JSON.stringify(person);
+	window['localStorage'].setItem('personJson', personJson);
+	document.getElementById('response').innerHTML ="answers Saved!";
+	}
+	function showMyAnswers (){
+	if (window['localStorage'].getItem('personJson')){
+		var person = window['localStorage'].getItem('personJson');
+		var personJson = JSON.parse(person);
+		document.getElementById('response').innerHTML = personJson.book + '<br>' +
+														personJson.color + '<br>' +      
+														personJson.hobbie + '<br>' ;
+	} else {
+		document.getElementById('response').innerHTML = "You have not answer questions yet.";
+	}
+}
+
+function storeArray(){
+	myArray = 6;
+	window['localStorage'].setItem('array', myArray);
+	console.log(window['localStorage'].getItem('array'));
+} 
