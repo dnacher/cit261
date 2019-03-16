@@ -1,6 +1,7 @@
 $(document).ready(main);
 
 var contador = 1;
+var ctx;
 
 function main () {
 	$('.menu_bar').click(function(){
@@ -27,8 +28,15 @@ function main () {
 
 function canvas(){
 	var c = document.getElementById("myCanvas");
-            var ctx = c.getContext("2d");
+			ctx = c.getContext("2d");
             ctx.beginPath();
             ctx.arc(95,50,40,0,2*Math.PI);
             ctx.stroke();
+}
+
+function hello(){
+	var c = document.getElementById("hello");
+	ctx = c.getContext("2d");
+	ctx.font = "30px Arial";
+	ctx.fillText("Hello CIT-261", 10, 50);
 }
