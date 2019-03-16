@@ -58,6 +58,18 @@
             <p class="transbox">put your mouse over the guitar to make it bigger</p><br>
             <img onmouseover="bigMe(this)" onmouseout="smallMe(this)" src="css/media/guitar.png" alt="guitar" height="32px" width="32px">
         </div>
+
+        <div class="divElement">
+            <p class="transbox">Place your mouse over the shape to rotate it!</p><br>
+            <div class="square" id="shape" onmouseover="modify()"></div><br><br><br><br><br><br><br>
+            
+            <button class="button" onclick="handleClick()" >Change Shape</button><br><br>
+
+            <div class="square2" id="shape2"></div><br><br><br><br><br><br><br>
+            
+
+            <button class="button" onclick="modify2()">Start Moving</button>
+        </div>
         
     </body>
     
