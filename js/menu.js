@@ -86,7 +86,3 @@ function createObjectInformation(){
 	person.hobbie = hobbie;
 	document.getElementById("objectInformation").innerHTML = person.name + " " + person.lastname + " is " + person.age + " years old and likes " + person.hobbie;
 }
-
-function ontouchFunction(){
-	document.getElementById("triggerParagraph").innerHTML = "Hello CIT-261";
-}
