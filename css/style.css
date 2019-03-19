@@ -86,6 +86,14 @@ footer div.foot{
         padding: 10px;
     }
 
+    ul.transbox{
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.8;
+        filter: alpha(opacity=85); /* For IE8 and earlier */
+        padding: 10px;
+    }
+
     h1.transbox{
         top: 80%;
         margin-top: 20%;
@@ -114,6 +122,17 @@ footer div.foot{
 
     .button {
         background-color: #37a4d9; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+
+      .button-delete {
+        background-color: #a50000; /* red */
         border: none;
         color: white;
         padding: 15px 32px;

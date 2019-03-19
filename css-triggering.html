@@ -28,7 +28,13 @@
             <nav id="page-nav">  
                 <div class="menu">
                     <ul>
-                        <li><a href="loops.html" title="Loops"><span class="first">Loops!</span>Loops and Arrays</a></li>
+                        <li class="submenu"><a href="loops.html" title="Loops"><span class="first">Loops!</span>Loops and Arrays</a>
+                            <ul class="children">
+                                <li><a href="loops.html" title="Images">Loops and Arrays</a></li>
+                                <li><a href="ajax-requesting.html" title="Ajax Requesting">Ajax Requesting</a></li>
+                                <li><a href="dom-manipulating.html" title="DOM Manipulating">DOM Manipulating</a></li>
+                            </ul>
+                        </li>
                         <li class="submenu"><a href="" title="HTML5 & CSS"><span class="third">HTML5 & CSS!</span>HTML5 & CSS</a>
                             <ul class="children">
                                 <li><a href="images.html" title="Images">Images and Sounds</a></li>
@@ -47,7 +53,8 @@
                 </div>
             </nav>
         </div>
-        <!-- Menu Finish -->   
+        <!-- Menu Finish -->  
+
         <div class="divElement">
             <p class="transbox" ontouchstart="ontouchFunction(event)">Touch me!, not click me</p><br>
             <p class="transbox">Tip: if you're not on your phone and you want to check this function<br>
@@ -57,9 +64,7 @@
 
             <p class="transbox">put your mouse over the guitar to make it bigger</p><br>
             <img onmouseover="bigMe(this)" onmouseout="smallMe(this)" src="css/media/guitar.png" alt="guitar" height="32px" width="32px">
-        </div>
-
-        <div class="divElement">
+            <br><br><br>
             <p class="transbox">Place your mouse over the shape to rotate it!</p><br>
             <div class="square" id="shape" onmouseover="modify()"></div><br><br><br><br><br><br><br>
             
@@ -69,8 +74,8 @@
             
 
             <button class="button" onclick="modify2()">Start Moving</button>
-        </div>
-        
+
+        </div>        
     </body>
     
     <footer>

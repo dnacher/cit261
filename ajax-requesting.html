@@ -5,7 +5,46 @@
         <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
         <script src="js/menu.js"></script>
-        <title>CSS Transformation</title>
+        <title>AJAX Requesting</title>
+
+        <script>
+            function getAllAjaxInfo(){
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var out="";
+                        var content = JSON.parse(this.responseText);
+                        for(var i=0; i<content.cars.length;i++){
+                                out += 'Make: ' + content.cars[i].Make + ' Model and Year: ' + content.cars[i].Model + '<br>';
+                        }
+
+                        document.getElementById("response").innerHTML = out;
+                }
+                };
+                xhttp.open("GET", "https://api.myjson.com/bins/y817m", true);
+                xhttp.send(); 
+            }
+
+            function getAjaxInfoByYear(){
+                var year = document.getElementById("year").value;
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var out="";
+                        var content = JSON.parse(this.responseText);
+                        for(var i=0; i<content.cars.length;i++){
+                            if(year == content.cars[i].Year){
+                                out += 'Make: ' + content.cars[i].Make + ' Model and Year: ' + content.cars[i].Model + '<br>';
+                            }
+                        }
+
+                        document.getElementById("response").innerHTML = out;
+                }
+                };
+                xhttp.open("GET", "https://api.myjson.com/bins/y817m", true);
+                xhttp.send(); 
+            }
+        </script>
     </head>
         
     <body>   
@@ -39,13 +78,14 @@
                 </div>
             </nav>
         </div>
-        <!-- Menu Finish -->    
-
-        <div class="divElement">
-            <div class="square" id="shape" onmouseover="modify()"></div><br><br><br><br><br><br><br>
+        <!-- Menu Finish -->   
         
-            <button class="button" onclick="handleClick()" >Change Shape</button><br><br>
-        </div>
+        <div class="divElement">
+            <input id="year" type="text"><br><br>
+            <button class="button" onclick="getAjaxInfoByYear()">get cars by year!</button><br><br>
+            <button class="button" onclick="getAllAjaxInfo()">get all the cars!</button><br><br><br>
+            <p class="transbox" id="response"></p>
+        </div>        
     </body>
     
     <footer>

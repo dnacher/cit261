@@ -169,3 +169,4 @@ function storeArray(){
 	window['localStorage'].setItem('array', myArray);
 	console.log(window['localStorage'].getItem('array'));
 } 
+

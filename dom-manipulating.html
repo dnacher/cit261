@@ -5,9 +5,8 @@
         <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/>
         <script src="js/menu.js"></script>
-        <title>CSS Transformation</title>
-    </head>
-        
+        <title>DOM Manipulating</title>    
+    
     <body>   
         <!-- Menu -->         
         <div class="body-index">           
@@ -39,14 +38,49 @@
                 </div>
             </nav>
         </div>
-        <!-- Menu Finish -->    
-
-        <div class="divElement">
-            <div class="square" id="shape" onmouseover="modify()"></div><br><br><br><br><br><br><br>
+        <!-- Menu Finish -->   
         
-            <button class="button" onclick="handleClick()" >Change Shape</button><br><br>
-        </div>
+        <div class="divElement">
+                <ul class="transbox" id="carList"></ul><br><br>
+
+                <p class="transbox" style="color: green">Add a Car: </p>     
+                <input type="text" id="carMake"><br><br>
+                <button class="button" onClick="addCar()">Add Car</button><br><br>
+                
+                <p class="transbox">Delete Car: </p>        
+                <input type="text" id="toRemove"><br><br>
+                <button class="button-delete" onClick="removeCar()">Delete Car</button>
+        </div>        
     </body>
+
+    <script>
+        var carList = document.getElementById("carList");
+
+        function clearTextBox(){
+            document.getElementById("carMake").value = "";
+            document.getElementById("toRemove").value = "";
+        }
+
+        function addCar(){
+            var item = document.createElement("LI");
+            var car = document.createTextNode(document.getElementById("carMake").value);
+                item.appendChild(car);  
+                carList.insertBefore(item, carList.childNodes[0]);
+                clearTextBox();
+        }
+        
+        function removeCar(){
+            var car = document.getElementById("toRemove").value;
+            for (i = 0; i < carList.childNodes.length; i++){
+                if (carList.childNodes[i].innerHTML == car){
+                    carList.removeChild(carList.childNodes[i]);
+                }
+            }
+            clearTextBox();            
+        }
+    </script>
+
+    </head>
     
     <footer>
         <div class="foot">    
